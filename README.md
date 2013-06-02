@@ -11,7 +11,7 @@ Requirements
 
 You’ll need a server which runs Ruby 1.9.2+ and Apache/nginx. If you’re
 using Debian, have at least the following packages installed:
-`ruby1.9.1 ruby-sqlite3 ruby-rack`
+`ruby1.9.1 ruby-sqlite3 ruby-rack thin`
 
 
 Setup
