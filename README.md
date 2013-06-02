@@ -27,8 +27,8 @@ can successfully run YarpNarp.
   - run `rackup -s thin` in a screen session
   - in `/etc/nginx/sites-enabled/yarpnarp`:
 
-
-    server {
+   ```
+   server {
         listen YOUR_V4_IP:80;
         listen YOUR_V6_IP:80;
 
@@ -45,8 +45,7 @@ can successfully run YarpNarp.
             proxy_pass http://localhost:9292;
         }
     }
-
-
+    ```
 
 License and attribution
 -----------------------
