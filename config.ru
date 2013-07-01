@@ -149,7 +149,7 @@ HTML_HEADER = %(<!DOCTYPE html>
    </style>
  </head>
  <body>
- <h1>YarpNarp</h2>
+ <h1>YarpNarp</h1>
  <!--<p>Are you attending the next Chaos-Stammtisch? Please have a look at the <a href="https://www.noname-ev.de/w/Template:Aktuelles">upcoming events table</a> to see where we are going.</p>-->
  <p>Are you attending the next Chaos-Stammtisch? We are going to meet at <a href="https://www.noname-ev.de/w/Gilberts_Goldener_Adler"><b>Gilberts Goldener Adler</b></a>.</p>
  )
@@ -218,7 +218,7 @@ app = proc do |env|
 
 
 
-  if p["action"] == "SUPER_SECRET_CHANGE_ME" # php military security
+  if p["action"] == "SUPER_SECRET_CHANGE_ME" # php military security. keywords: reset clear clean
     $db.execute("DELETE FROM yarpnarp")
   end
 
