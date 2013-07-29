@@ -18,6 +18,8 @@ require "cgi"
 MAX_NICK = 30
 MAX_COMMENT = 200
 
+MEET_AT = IO.read("meet_at") rescue %(We’re not yet sure where to meet yet. Maybe you can find more in the <a href="https://www.noname-ev.de/w/Template:Aktuelles">upcoming events table</a>, otherwise please check back in a few days.)
+
 DB_FILE = File.dirname(__FILE__) + "/yarpdb.sqlite3"
 
 HTML_HEADER = %(<!DOCTYPE html>
@@ -150,8 +152,7 @@ HTML_HEADER = %(<!DOCTYPE html>
  </head>
  <body>
  <h1>YarpNarp</h1>
- <!--<p>Are you attending the next Chaos-Stammtisch? Please have a look at the <a href="https://www.noname-ev.de/w/Template:Aktuelles">upcoming events table</a> to see where we are going.</p>-->
- <p>Are you attending the next Chaos-Stammtisch? We are going to meet at <a href="https://www.noname-ev.de/w/Gilberts_Goldener_Adler"><b>Gilberts Goldener Adler</b></a>.</p>
+ <p>#{MEET_AT}</p>
  )
 
 HTML_FOOTER = %(</body></html>)
