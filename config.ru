@@ -247,7 +247,7 @@ app = proc do |env|
     out << render_row(row, nick)
   end
   out << %(</table><table>)
-  out << %(<tr><th>Narp</th><td>#{cnt_narp} humans</td></td></tr>)
+  out << %(<tr><th>Narp</th><td>#{cnt_narp} humans</td></tr>)
   $db.execute("SELECT * FROM yarpnarp WHERE yarp = 0 ORDER BY nick COLLATE NOCASE ASC") do |row|
     out << render_row(row, nick)
   end
@@ -255,8 +255,8 @@ app = proc do |env|
 
   out << %(<h3>Automatization</h3>)
   out << %(<p>You can automate yarp/narping, if you want to. The general URL format is shown below. Comment is always optional; nick only if your browser stored it as cookie once. If all goes well, it will report a 302 (redirect) or 200 (success). If it fails, it will report 418 (I’m a teapot).<br/>)
-  out << %(<tt>http://#{req.env['HTTP_HOST']}?action=<b>yarp</b>&nick=<b>X</b>&comment=<b>Y</b></tt><br/>)
-  out << %(<tt>http://#{req.env['HTTP_HOST']}?action=<b>narp</b>&nick=<b>X</b>&comment=<b>Y</b></tt><br/>)
+  out << %(<tt>http://#{req.env['HTTP_HOST']}?action=<b>yarp</b>&amp;nick=<b>X</b>&amp;comment=<b>Y</b></tt><br/>)
+  out << %(<tt>http://#{req.env['HTTP_HOST']}?action=<b>narp</b>&amp;nick=<b>X</b>&amp;comment=<b>Y</b></tt><br/>)
   out << %(</p>)
 
 
