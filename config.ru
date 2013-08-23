@@ -20,6 +20,8 @@ MAX_COMMENT = 200
 
 MEET_AT = IO.read("meet_at") rescue %(We’re not yet sure where to meet yet. Maybe you can find more in the <a href="https://www.noname-ev.de/w/Template:Aktuelles">upcoming events table</a>, otherwise please check back in a few days.)
 
+CSS = IO.read("style.css").gsub(/\s+/, " ")
+
 DB_FILE = File.dirname(__FILE__) + "/yarpdb.sqlite3"
 
 HTML_HEADER = %(<!DOCTYPE html>
@@ -28,127 +30,7 @@ HTML_HEADER = %(<!DOCTYPE html>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>YarpNarp</title>
-    <style type="text/css">
-      body {
-        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-        max-width: 25em;
-        margin: 0 auto;
-        font-size: 1.1em;
-        background: #fff;
-        color: #000;
-        padding: 0 0.5em;
-      }
-
-      a {
-        color: #2666A7;
-      }
-
-      input {
-        display: block;
-        width: 100%;
-        margin: 4px 0;
-        border: 1px solid #ccc;
-        padding: 5px;
-        font-size: 1.1em;
-        border-radius: 0.2em;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-      }
-
-      input[type=text]:focus {
-        box-shadow: 0 0 0.2em #0060A9 !important;
-        outline:none;
-        border-color: #0060A9;
-        box-sizing: border-box;
-      }
-
-      input[type=submit] {
-        width: 48%;
-        display: inline;
-        background: #EDECEB;
-      }
-
-      input[type=submit] + input[type=submit] {
-        float: right;
-      }
-
-      .error {
-        background: #FFE9EA;
-        border: 1px solid #FF8389;
-        padding: 5px;
-        border-radius: 0.2em;
-      }
-
-      table {
-        width: 100%;
-        border-spacing: 0;
-        border-collapse: collapse;
-        margin-top:1.1em;
-        table-layout: fixed;
-        margin-bottom: 1.5em;
-      }
-
-      th, td {
-        padding: 5px;
-        text-align: left;
-        font-size: 1.1em;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-      }
-
-      th {
-        font-variant: small-caps;
-      }
-
-      th + td {
-        color: #666;
-        font-style: italic;
-        text-align: right;
-      }
-
-      tr:first-child {
-        border-bottom: 1px solid #666;
-        background: #eee !important;
-      }
-
-      /*tr:nth-child(odd) {
-        background: #F9F9F9;
-      }*/
-
-      th, td:nth-child(odd) {
-        width: 35%;
-      }
-
-      td:nth-child(even) {
-        width: 65%;
-        color: #666;
-        font-weight:normal;
-        text-align: right;
-      }
-
-      .yarp {
-        background: #E5F9ED !important;
-        padding: 5px;
-      }
-
-      .narp {
-        background: #F9E6E5 !important;
-        padding: 5px;
-      }
-
-      .highlight {
-        font-weight: bold;
-      }
-
-      h3 {
-        margin-bottom: 0em;
-      }
-
-      h3 + p {
-        margin-top: 0.4em;
-      }
-   </style>
+    <style type="text/css">#{CSS}</style>
  </head>
  <body>
  <h1>YarpNarp</h1>
