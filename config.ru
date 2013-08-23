@@ -137,8 +137,8 @@ app = proc do |env|
 
   out << %(<h3>Automatization</h3>)
   out << %(<p>You can automate yarp/narping, if you want to. The general URL format is shown below. Comment is always optional; nick only if your browser stored it as cookie once. If all goes well, it will report a 302 (redirect) or 200 (success). If it fails, it will report 418 (I’m a teapot).<br/>)
-  out << %(<tt>http://#{req.env['HTTP_HOST']}?action=<b>yarp</b>&amp;nick=<b>X</b>&amp;comment=<b>Y</b></tt><br/>)
-  out << %(<tt>http://#{req.env['HTTP_HOST']}?action=<b>narp</b>&amp;nick=<b>X</b>&amp;comment=<b>Y</b></tt><br/>)
+  out << %(<span>http://#{req.env['HTTP_HOST']}?action=<b>yarp</b>&amp;nick=<b>X</b>&amp;comment=<b>Y</b></span><br/>)
+  out << %(<span>http://#{req.env['HTTP_HOST']}?action=<b>narp</b>&amp;nick=<b>X</b>&amp;comment=<b>Y</b></span><br/>)
   out << %(</p>)
 
 
